@@ -1,0 +1,17 @@
+@use './styleComponents/sections.scss';
+
+.education {
+    @include sections.section;
+    & > h1 {
+        @include sections.header;
+    }
+    & > p{
+        @include sections.paragraph;
+    }
+}
+.course_lists{
+    margin-top: 1.5em; 
+}
+.links {
+    @include sections.links;
+}

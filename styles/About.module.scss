@@ -1,0 +1,16 @@
+@use './styleComponents/sections.scss';
+
+.about{
+    @include sections.section;
+    & > h1 {
+        @include sections.header;
+        margin-bottom: 0;
+    }
+    & > p{
+        @include sections.paragraph;
+        margin: 1em 6em 2em 6em;
+    }
+}
+.dots{
+    font-size: 2em;
+}

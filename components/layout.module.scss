@@ -1,0 +1,45 @@
+
+.container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #232946;   
+}
+.nav{
+    height: 100vh;
+    width: 20vw;
+    position: fixed;
+    border-right: 1px solid #ccc;
+    & > ul{
+        margin-top: 3em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }     
+}
+.nav_item{
+    margin: 1.3em 4em 1.3em 3em;
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+    font-size: 0.9em;
+
+    & > svg{
+        width: 1.5em;
+        height: 1.5em;
+    }
+    &:hover{
+        cursor: pointer;
+        color: #eebbc3;
+    }
+}
+.nav_footer{
+    margin-top: 4em;
+    margin-left: 3em;
+    &:hover{
+        cursor: pointer;
+        color: #eebbc3;
+    }
+}

@@ -1,0 +1,14 @@
+@use './styleComponents/sections.scss';
+
+.hobbies{
+    @include sections.section;
+    & > h1 {
+        @include sections.header;
+    }
+    & > p {
+        @include sections.paragraph;
+    }
+}
+.link{
+    @include sections.links;
+}

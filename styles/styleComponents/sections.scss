@@ -1,0 +1,34 @@
+// Styling the whole components skeleton
+@mixin section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+    margin-left: 20vw;
+}
+
+// Styling the header of section
+@mixin header($font-size:2em) {
+    font-size: $font-size;
+    color: #fffffe;
+}
+
+//Styling the p tag of section
+@mixin paragraph ($line-height:2em) {
+    text-align: center;
+    color: #b8c1ec;
+    font-size: 1.1em;
+    line-height: $line-height;
+    margin-right: 6em;
+    margin-left: 6em;
+}
+// Styling the links
+@mixin links {
+    color: #fffffe;
+    border-bottom: 1px solid #fffffe;
+    &:hover {
+        color: #eebbc3;
+        border-bottom: 1px solid #eebbc3;
+    }
+}
