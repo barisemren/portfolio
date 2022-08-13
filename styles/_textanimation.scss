@@ -1,0 +1,16 @@
+.home-text {
+  span {
+    animation: welcome 2s ease-in-out alternate;
+  }
+}
+.memoji{
+  animation: welcome 2s ease-in-out alternate;
+}
+@keyframes welcome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+}
+}

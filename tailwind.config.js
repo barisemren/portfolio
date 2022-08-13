@@ -29,6 +29,7 @@ module.exports = {
         b3: "#FEFAE0",
         b4: "#FAEDCD",
         b5: "#264653",
+        b6: "#2a9d8f",
       },
     },
   },
