@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "fontface";
+
+body {
+  font-family: RobotoCondensed;
+  font-style: normal;
+}
