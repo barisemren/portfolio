@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "fontface";
+@import "hovers";
+@import "textanimation";
+
+body {
+  font-family: RobotoCondensed;
+  font-style: normal;
+}
+html {
+  @apply bg-b3;
+}
+
+
+
