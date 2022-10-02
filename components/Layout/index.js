@@ -1,10 +1,11 @@
 import Header from "../Header";
-
-export default function index({children}) {
+export default function Layout({ children }) {
   return (
     <section>
-        <Header/>
+      <Header />
+      <main>
         {children}
+      </main>
     </section>
-  )
+  );
 }

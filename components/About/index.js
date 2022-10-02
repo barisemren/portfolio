@@ -1,10 +1,21 @@
 import Image from "next/image";
 import me from "../../public/pp.png";
+import { motion } from "framer-motion";
+import Social from "./socials";
+import Experience from "./experiences";
+import experiences from "../../Data/Experience/index.json";
 export default function index() {
+  console.log(experiences);
   return (
-    <section className="container pt-8">
+    <motion.section
+      initial={{ y: 8, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -8, opacity: 0 }}
+      transition={{ duration: 0.7 }}
+      className="custom-container "
+    >
       <div className="grid grid-cols-12">
-        <div className="col-span-12 lg:col-span-3 justify-self-center lg:justify-self-start">
+        <div className="col-span-12 lg:col-span-3 justify-self-center md:justify-self-start">
           <Image
             className="rounded-md"
             src={me}
@@ -14,11 +25,11 @@ export default function index() {
             quality={100}
           />
         </div>
-        <div className="col-span-12 lg:col-span-7 lg:col-start-5 lg:border-t border-b5 ">
-          <div className="pt-14">
+        <div className="col-span-12 lg:col-span-8 lg:col-start-5 lg:border-t border-b5 ">
+          <div className="pt-14 h-full flex flex-col justify-between">
             <p className="text-3xl">
               As an self-taught developer, I am passionate about creating web
-              applications. Currently, I am working as a Jr. Frontend Developer{" "}
+              applications. Currently, I am working as a Frontend Developer{" "}
               <a
                 className="text-b6"
                 target="_blank"
@@ -29,58 +40,21 @@ export default function index() {
               </a>{" "}
               and trying to gradute from electrical and electronics engineering.
             </p>
+            <div className="mt-10 lg:mt-0">
+              <Social />
+            </div>
           </div>
         </div>
-        <div className="mt-8 col-span-12 lg:col-span-11 lg:border-b border-b5"></div>
+        <div className="mt-8 col-span-12 lg:col-span-12 lg:border-b border-b5"></div>
         <div className="col-span-12 lg:col-span-6 mt-8">
-          <h3 className="text-4xl text-b5 underline underline-offset-8">Experience.</h3>
-          <div className="flex flex-row mt-10 pb-6 items-center justify-between border-b border-b5">
-            <div className="flex flex-col space-y-4">
-              <p className="text-b6 text-xl">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://saypr.com/"
-                >
-                  Saypr
-                </a>
-              </p>
-              <p className="text-b5 text-xl">Frontend Developer</p>
-            </div>
-            <div className="text-xl">MAY 2022 - PRESENT</div>
-          </div>
-          <div className="flex flex-row mt-10 pb-6 items-center justify-between border-b border-b5">
-            <div className="flex flex-col space-y-4">
-              <p className="text-b6 text-xl">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.sufle.io/"
-                >
-                  Sufle
-                </a>
-              </p>
-              <p className="text-b5 text-xl">Software Development Intern</p>
-            </div>
-            <div className="text-xl">MARCH 2022 - MAY 2022</div>
-          </div>
-          <div className="flex flex-row my-10 items-center justify-between">
-            <div className="flex flex-col space-y-4">
-              <p className="text-b6 text-xl">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.samm.com/en/"
-                >
-                  Samm Teknoloji
-                </a>
-              </p>
-              <p className="text-b5 text-xl">Engineering Intern</p>
-            </div>
-            <div className="text-xl">JULY 2021 - AUGUST 2021</div>
-          </div>
+          <h3 className="text-4xl text-b5 underline underline-offset-8">
+            Experience.
+          </h3>
+          {experiences?.map((experience, index) => {
+            return <Experience key={index} exp={experience} />;
+          })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

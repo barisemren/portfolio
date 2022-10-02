@@ -5,16 +5,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      screens: {
-        xs: "335px",
-        sm: "385px",
-        md: "718px",
-        lg: "954px",
-        xl: "1340px",
-      },
-    },
     screens: {
       xs: "375px",
       sm: "425px",

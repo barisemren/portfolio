@@ -3,14 +3,14 @@
 @tailwind utilities;
 @import "fontface";
 @import "hovers";
-@import "textanimation";
+@import "container";
 
 body {
   font-family: RobotoCondensed;
   font-style: normal;
 }
 html {
-  @apply bg-b3;
+  @apply bg-b3 lg:overflow-x-hidden;
 }
 
 

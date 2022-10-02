@@ -6,7 +6,7 @@ import cn from "classnames";
 export default function index() {
   const router = useRouter();
   return (
-    <section className="container my-8 pb-2 ">
+    <section className="custom-container h-[15vh] py-8">
       <div className="grid grid-cols-12 text-b5">
         <div className="col-span-6 md:col-span-2">
           <Link href={"/"}>
@@ -23,16 +23,6 @@ export default function index() {
                 )}
               >
                 about
-              </a>
-            </Link>
-            <Link href={"/get-in-touch"}>
-              <a
-                className={cn(
-                  "hover:text-b6 custom-hover relative",
-                  router.pathname === "/get-in-touch" && "active-link"
-                )}
-              >
-                get in touch
               </a>
             </Link>
           </div>
