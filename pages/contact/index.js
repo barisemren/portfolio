@@ -1,13 +1,13 @@
 import Layout from "../../components/Layout";
-import About from "../../components/About";
+import Contact from "../../components/Contact";
 import Head from "next/head";
 export default function index() {
   return (
     <Layout>
       <Head>
-        <title>Barış Emren | About</title>
+        <title>Barış Emren | Contact</title>
       </Head>
-      <About />
+      <Contact />
     </Layout>
   );
 }

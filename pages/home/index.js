@@ -1,13 +1,15 @@
+import React from "react";
 import Layout from "../../components/Layout";
-import About from "../../components/About";
+import Home from "../../components/Home";
 import Head from "next/head";
+
 export default function index() {
   return (
     <Layout>
       <Head>
-        <title>Barış Emren | About</title>
+        <title>Barış Emren | Home</title>
       </Head>
-      <About />
+      <Home />
     </Layout>
   );
 }

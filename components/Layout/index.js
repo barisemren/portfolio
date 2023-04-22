@@ -1,11 +1,9 @@
-import Header from "../Header";
+import NavigationBar from "../NavigationBar";
 export default function Layout({ children }) {
   return (
-    <section>
-      <Header />
-      <main>
-        {children}
-      </main>
+    <section className="w-screen h-screen">
+      <NavigationBar />
+      <main className="py-20 h-full">{children}</main>
     </section>
   );
 }
