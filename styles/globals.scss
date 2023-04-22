@@ -1,17 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "fontface";
+// @import "fontface";
 @import "hovers";
 @import "container";
 
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap");
+
 body {
-  font-family: RobotoCondensed;
-  font-style: normal;
+  font-family: "Shantell Sans", cursive;
 }
 html {
-  @apply bg-b3 lg:overflow-x-hidden;
+  @apply bg-dark overflow-x-hidden;
 }
-
-
-

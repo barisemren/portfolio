@@ -1,17 +1,17 @@
 .custom-container {
   @screen xs {
-    @apply mx-[15px];
+    @apply mx-8;
   }
   @screen sm {
-    @apply mx-[10px];
+    @apply mx-10;
   }
   @screen md {
-    @apply mx-[20px];
+    @apply mx-32;
   }
   @screen lg {
-    @apply mx-[30px];
+    @apply mx-56;
   }
   @screen xl {
-    @apply mx-[2.7vw];
+    @apply mx-[20vw];
   }
 }

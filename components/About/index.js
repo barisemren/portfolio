@@ -1,59 +1,119 @@
 import Image from "next/image";
 import me from "../../public/pp.png";
 import { motion } from "framer-motion";
-import Social from "./socials";
-import Experience from "./experiences";
 import experiences from "../../Data/Experience/index.json";
+import Link from "next/link";
 export default function index() {
-  console.log(experiences);
   return (
     <motion.section
       initial={{ y: 8, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -8, opacity: 0 }}
       transition={{ duration: 0.7 }}
-      className="custom-container "
+      className="custom-container"
     >
-      <div className="grid grid-cols-12">
-        <div className="col-span-12 lg:col-span-3 justify-self-center md:justify-self-start">
-          <Image
-            className="rounded-md"
-            src={me}
-            alt="Barış Emren"
-            width={350}
-            height={406}
-            quality={100}
-          />
-        </div>
-        <div className="col-span-12 lg:col-span-8 lg:col-start-5 lg:border-t border-b5 ">
-          <div className="pt-14 h-full flex flex-col justify-between">
-            <p className="text-3xl">
-              As an self-taught developer, I am passionate about creating web
-              applications. Currently, I am working as a Frontend Developer{" "}
-              <a
-                className="text-b6"
-                target="_blank"
-                rel="noreferrer"
-                href="https://saypr.com/"
-              >
-                @Saypr
-              </a>{" "}
-              and trying to gradute from electrical and electronics engineering.
-            </p>
-            <div className="mt-10 lg:mt-0">
-              <Social />
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 col-span-12 lg:col-span-12 lg:border-b border-b5"></div>
-        <div className="col-span-12 lg:col-span-6 mt-8">
-          <h3 className="text-4xl text-b5 underline underline-offset-8">
-            Experience.
-          </h3>
-          {experiences?.map((experience, index) => {
-            return <Experience key={index} exp={experience} />;
-          })}
-        </div>
+      <div className="text-soft w-full pb-32 lg:pb-56">
+        <h3 className="text-b2 text-2xl lg:text-4xl mb-10 lg:mb-20 underline underline-offset-8 lg:underline-offset-[14px] hover:text-b4">
+          the bit about myself
+        </h3>
+        <p className="text-xl lg:text-3xl">
+          As a self-taught developer with a particular interest in front-end
+          development, I am passionate about creating modern and user-friendly
+          web applications.
+          <br />
+          <br />
+          Currently developing{" "}
+          <span className="text-green">
+            serverless web applications
+          </span> at{" "}
+          <Link href={"https://sufle.io/"}>
+            <a
+              href="https://sufle.io/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-purple hover:text-green"
+            >
+              Sufle.
+            </a>
+          </Link>
+          <br />
+          <br />
+          <br />I am really into listening all kind of music, so if you want to
+          take a look{" "}
+          <Link
+            href={
+              "https://open.spotify.com/user/baris.emren?si=30ce30489b034072"
+            }
+            target="_blank"
+          >
+            <a
+              href="https://open.spotify.com/user/baris.emren?si=30ce30489b034072"
+              target="_blank"
+              rel="noreferrer"
+              className="text-green hover:text-purple"
+            >
+              here
+            </a>
+          </Link>{" "}
+          is my spotify.
+          <br />
+          <br />
+          Although I rarely post,{" "}
+          <Link href={"https://vsco.co/barisemren/gallery"} target="_blank">
+            <a
+              href="https://vsco.co/barisemren/gallery"
+              target="_blank"
+              rel="noreferrer"
+              className="text-green hover:text-purple"
+            >
+              here
+            </a>
+          </Link>{" "}
+          is my vsco.
+        </p>
+        <h3 className="text-b2 text-2xl lg:text-4xl my-10 lg:my-20 underline underline-offset-8 lg:underline-offset-[14px] hover:text-b4">
+          experiences
+        </h3>
+        <p className="text-xl lg:text-3xl">
+          I did my intership at{" "}
+          <Link href={"https://sufle.io/"}>
+            <a
+              href="https://sufle.io/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-purple hover:text-green"
+            >
+              Sufle.
+            </a>
+          </Link>
+          <br />
+          <br />
+          After finished my intership, I joined{" "}
+          <Link href={"https://saypr.com/"}>
+            <a
+              href="https://saypr.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-purple hover:text-green"
+            >
+              Saypr
+            </a>
+          </Link>{" "}
+          as a front-end developer.
+          <br />
+          <br />
+          As i mentioned before, I am currently working as a software developer at{" "}
+          <Link href={"https://sufle.io/"}>
+            <a
+              href="https://sufle.io/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-purple hover:text-green"
+            >
+              Sufle.
+            </a>
+          </Link>
+        </p>
       </div>
     </motion.section>
   );
