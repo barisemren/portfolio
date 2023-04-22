@@ -14,7 +14,7 @@ export default function NavigationBar() {
 
   console.log(activeTab);
   return (
-    <section className="w-min m-auto mt-4 py-2 lg:py-4 px-3 lg:px-16 bg-soft rounded-[40px] fixed left-0 right-0 bottom-5 lg:bottom-10 z-50">
+    <section className="w-min m-auto mt-4 py-2 lg:py34 px-3 lg:px-16 bg-soft rounded-[40px] fixed left-0 right-0 bottom-5 lg:bottom-10 z-50">
       <div className="w-full h-full">
         <div className="flex space-x-1">
           {tabs.map((tab) => (
