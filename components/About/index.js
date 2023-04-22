@@ -1,8 +1,6 @@
-import Image from "next/image";
-import me from "../../public/pp.png";
 import { motion } from "framer-motion";
-import experiences from "../../Data/Experience/index.json";
 import Link from "next/link";
+
 export default function index() {
   return (
     <motion.section
@@ -102,7 +100,8 @@ export default function index() {
           as a front-end developer.
           <br />
           <br />
-          As i mentioned before, I am currently working as a software developer at{" "}
+          As i mentioned before, I am currently working as a software developer
+          at{" "}
           <Link href={"https://sufle.io/"}>
             <a
               href="https://sufle.io/"

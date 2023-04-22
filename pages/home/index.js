@@ -8,6 +8,7 @@ export default function index() {
     <Layout>
       <Head>
         <title>Barış Emren | Home</title>
+        <link rel="icon" type="favicon" href="/favicon.ico" />
       </Head>
       <Home />
     </Layout>
