@@ -23,7 +23,7 @@ export default function index() {
             href="mailto:baris.emren@yahoo.com"
             target="_blank"
             rel="noreferrer"
-            className="text-purple hover:text-green text-2xl inline-flex items-center space-x-3"
+            className="text-green hover:text-purple text-2xl inline-flex items-center space-x-3"
           >
             <p>say hi anytime!</p>
             <Icon icon="link" size="20" className="" />
@@ -31,12 +31,12 @@ export default function index() {
         </Link>
         <br />
         <br />
-        <Link href={"mailto:baris.emren@yahoo.com"}>
+        <Link href={"https://www.linkedin.com/in/barisemren/"}>
           <a
-            href="mailto:baris.emren@yahoo.com"
+            href="https://www.linkedin.com/in/barisemren/"
             target="_blank"
             rel="noreferrer"
-            className="text-purple hover:text-green text-2xl inline-flex items-center space-x-3"
+            className="text-green hover:text-purple text-2xl inline-flex items-center space-x-3"
           >
             <p>or check my linkedin.</p>
             <Icon icon="link" size="20" />

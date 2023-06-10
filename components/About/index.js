@@ -8,9 +8,9 @@ export default function index() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -8, opacity: 0 }}
       transition={{ duration: 0.7 }}
-      className="custom-container"
+      className="custom-container h-full items-center flex"
     >
-      <div className="text-soft w-full pb-32 lg:pb-56">
+      <div className="text-soft w-full ">
         <h3 className="text-b2 text-2xl lg:text-4xl mb-10 lg:mb-20 underline underline-offset-8 lg:underline-offset-[14px] hover:text-b4">
           the bit about myself
         </h3>
@@ -69,6 +69,7 @@ export default function index() {
           </Link>{" "}
           is my vsco.
         </p>
+        {/* 
         <h3 className="text-b2 text-2xl lg:text-4xl my-10 lg:my-20 underline underline-offset-8 lg:underline-offset-[14px] hover:text-b4">
           experiences
         </h3>
@@ -113,6 +114,7 @@ export default function index() {
             </a>
           </Link>
         </p>
+        */}
       </div>
     </motion.section>
   );
