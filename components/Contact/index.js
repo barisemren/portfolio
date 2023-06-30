@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Icon from "../Icon";
+import React from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import Icon from '../Icon'
 
 export default function index() {
   return (
@@ -17,32 +17,44 @@ export default function index() {
         <br />
         <br />
         <br />
-
-        <Link href={"mailto:baris.emren@yahoo.com"}>
+        <Link href={'https://github.com/barisemren'}>
           <a
-            href="mailto:baris.emren@yahoo.com"
+            href="https://github.com/barisemren"
             target="_blank"
             rel="noreferrer"
-            className="text-green hover:text-purple text-2xl inline-flex items-center space-x-3"
+            className="text-purple hover:text-green text-2xl inline-flex items-center space-x-3"
           >
-            <p>say hi anytime!</p>
+            <p>visit my GitHub profile.</p>
             <Icon icon="link" size="20" className="" />
           </a>
         </Link>
         <br />
         <br />
-        <Link href={"https://www.linkedin.com/in/barisemren/"}>
+        <Link href={'https://www.linkedin.com/in/barisemren/'}>
           <a
             href="https://www.linkedin.com/in/barisemren/"
             target="_blank"
             rel="noreferrer"
-            className="text-green hover:text-purple text-2xl inline-flex items-center space-x-3"
+            className="text-purple hover:text-green text-2xl inline-flex items-center space-x-3"
           >
-            <p>or check my linkedin.</p>
+            <p>check my linkedin.</p>
             <Icon icon="link" size="20" />
+          </a>
+        </Link>
+        <br />
+        <br />
+        <Link href={'mailto:baris.emren@yahoo.com'}>
+          <a
+            href="mailto:baris.emren@yahoo.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-purple hover:text-green text-2xl inline-flex items-center space-x-3"
+          >
+            <p>or say hi anytime!</p>
+            <Icon icon="link" size="20" className="" />
           </a>
         </Link>
       </div>
     </motion.section>
-  );
+  )
 }

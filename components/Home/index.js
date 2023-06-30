@@ -15,7 +15,7 @@ export default function Home() {
         <div className="text-3xl lg:text-7xl">
           I am Barış, <br /> a{" "}
           <span className="text-green">Software Developer</span> <br />
-          from <span className="text-purple">Turkey</span>
+          based in <span className="text-purple">Turkey</span>
         </div>
       </div>
     </motion.section>
