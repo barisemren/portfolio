@@ -48,7 +48,7 @@ export default function index() {
               href="https://open.spotify.com/user/baris.emren?si=30ce30489b034072"
               target="_blank"
               rel="noreferrer"
-              className="text-green hover:text-purple"
+              className="text-purple hover:text-green"
             >
               here
             </a>
@@ -62,7 +62,7 @@ export default function index() {
               href="https://vsco.co/barisemren/gallery"
               target="_blank"
               rel="noreferrer"
-              className="text-green hover:text-purple"
+              className="text-purple hover:text-green"
             >
               here
             </a>
