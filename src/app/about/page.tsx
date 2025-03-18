@@ -116,6 +116,25 @@ export default function page() {
             is my vsco.
           </p>
         </div>
+        
+        <div className="mt-8 text-sm opacity-70 hover:opacity-100 transition-opacity">
+          <p>
+            <span className="mr-1">✨</span>
+            <Link href="/annotate-playground" className="text-purple hover:text-green">
+              <Annotate
+                type="underline"
+                color="oklch(52.92% 0.2326 282.81)"
+                hoverColor="oklch(69.07% 0.1428 160.38)"
+                className="text-purple hover:text-green"
+                showOnHover={true}
+                showOnLoad={false}
+                animationDuration={500}
+              >
+                Curious about these text effects? Try the Annotate component playground
+              </Annotate>
+            </Link>
+          </p>
+        </div>
       </article>
     </div>
   );
