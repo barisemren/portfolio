@@ -1,71 +1,71 @@
-"use client";
+'use client'
 
-import { useEffect, useRef, ReactNode, useState, useCallback } from "react";
-import { annotate } from "rough-notation";
+import { useEffect, useRef, ReactNode, useState, useCallback } from 'react'
+import { annotate } from 'rough-notation'
 
-type RoughAnnotationType = 
-  | "underline"
-  | "box"
-  | "circle"
-  | "highlight"
-  | "strike-through"
-  | "crossed-off"
-  | "bracket";
+type RoughAnnotationType =
+  | 'underline'
+  | 'box'
+  | 'circle'
+  | 'highlight'
+  | 'strike-through'
+  | 'crossed-off'
+  | 'bracket'
 
-type BracketType = "left" | "right" | "top" | "bottom";
+type BracketType = 'left' | 'right' | 'top' | 'bottom'
 
 // Interface for the annotation object returned by rough-notation
 interface RoughNotation {
-  show: () => void;
-  hide: () => void;
-  remove: () => void;
-  color: string | undefined;
+  show: () => void
+  hide: () => void
+  remove: () => void
+  color: string | undefined
 }
 
 interface AnnotateProps {
-  children: ReactNode;
-  type?: RoughAnnotationType;
-  color?: string;
-  hoverColor?: string;
-  animate?: boolean;
-  animationDuration?: number;
-  iterations?: number;
-  padding?: number | [number, number] | [number, number, number, number];
-  brackets?: BracketType | BracketType[];
-  multiline?: boolean;
-  strokeWidth?: number;
-  showOnLoad?: boolean;
-  className?: string;
-  showOnHover?: boolean;
+  children: ReactNode
+  type?: RoughAnnotationType
+  color?: string
+  hoverColor?: string
+  animate?: boolean
+  animationDuration?: number
+  iterations?: number
+  padding?: number | [number, number] | [number, number, number, number]
+  brackets?: BracketType | BracketType[]
+  multiline?: boolean
+  strokeWidth?: number
+  showOnLoad?: boolean
+  className?: string
+  showOnHover?: boolean
 }
 
 export default function Annotate({
   children,
-  type = "underline",
-  color = "#FFC107",
+  type = 'underline',
+  color = '#FFC107',
   hoverColor,
   animate = true,
   animationDuration = 800,
   iterations = 2,
   padding = 5,
-  brackets = ["right", "left"],
+  brackets = ['right', 'left'],
   multiline = true,
   strokeWidth = 1,
   showOnLoad = true,
   className,
   showOnHover = false,
 }: AnnotateProps) {
-  const elementRef = useRef<HTMLSpanElement>(null);
-  const annotationRef = useRef<RoughNotation | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  
+  const elementRef = useRef<HTMLSpanElement>(null)
+  const annotationRef = useRef<RoughNotation | null>(null)
+  const [isHovered, setIsHovered] = useState(false)
+
   // Determine if we should respond to hover events
-  const shouldHandleHover = showOnHover || !!hoverColor;
-  
+  const shouldHandleHover = showOnHover || !!hoverColor
+
   // Create annotation only once
   useEffect(() => {
-    if (!elementRef.current) return;
-    
+    if (!elementRef.current) return
+
     // Create the annotation once
     annotationRef.current = annotate(elementRef.current, {
       type,
@@ -77,71 +77,82 @@ export default function Annotate({
       brackets,
       multiline,
       strokeWidth,
-    }) as RoughNotation;
+    }) as RoughNotation
 
     // Initial show based on props
     if (showOnLoad && !showOnHover) {
-      annotationRef.current.show();
+      annotationRef.current.show()
     }
 
     // Cleanup
     return () => {
       if (annotationRef.current) {
-        annotationRef.current.remove();
+        annotationRef.current.remove()
       }
-    };
-  // Only recreate annotation when these critical props change
-  }, [type, animate, animationDuration, iterations, padding, brackets, multiline, strokeWidth, showOnLoad, showOnHover]);
+    }
+    // Only recreate annotation when these critical props change
+  }, [
+    type,
+    animate,
+    animationDuration,
+    iterations,
+    padding,
+    brackets,
+    multiline,
+    strokeWidth,
+    showOnLoad,
+    showOnHover,
+  ])
 
   // Handle color updates separately without recreating annotation
   useEffect(() => {
-    if (!annotationRef.current || !shouldHandleHover) return;
+    if (!annotationRef.current || !shouldHandleHover) return
 
     // Update color without recreating the annotation
-    const currentColor = isHovered && hoverColor ? hoverColor : color;
+    const currentColor = isHovered && hoverColor ? hoverColor : color
     if (annotationRef.current) {
-      annotationRef.current.color = currentColor;
+      annotationRef.current.color = currentColor
     }
-  }, [color, hoverColor, isHovered, shouldHandleHover]);
+  }, [color, hoverColor, isHovered, shouldHandleHover])
 
   // Handle hover state showing/hiding
   useEffect(() => {
-    if (!annotationRef.current) return;
+    if (!annotationRef.current) return
 
     if (showOnHover) {
       if (isHovered) {
-        annotationRef.current.show();
+        annotationRef.current.show()
       } else {
-        annotationRef.current.hide();
+        annotationRef.current.hide()
       }
     } else if (showOnLoad) {
-      annotationRef.current.show();
+      annotationRef.current.show()
     } else {
-      annotationRef.current.hide();
+      annotationRef.current.hide()
     }
-  }, [isHovered, showOnHover, showOnLoad]);
+  }, [isHovered, showOnHover, showOnLoad])
 
   // Memoize event handlers to prevent recreation on each render
   const handleMouseEnter = useCallback(() => {
     if (shouldHandleHover) {
-      setIsHovered(true);
+      setIsHovered(true)
     }
-  }, [shouldHandleHover]);
+  }, [shouldHandleHover])
 
   const handleMouseLeave = useCallback(() => {
     if (shouldHandleHover) {
-      setIsHovered(false);
+      setIsHovered(false)
     }
-  }, [shouldHandleHover]);
+  }, [shouldHandleHover])
 
   return (
-    <span 
-      ref={elementRef} 
+    <span
+      ref={elementRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`${className || ''} inline-block`}
     >
       {children}
     </span>
-  );
-} 
+  )
+}
