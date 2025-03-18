@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(100% 0 0);
+  --foreground: oklch(20.46% 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-rajdhani);
+  
+  /* Custom screen breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 425px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  /* Custom colors */
+  --color-b1: oklch(93.38% 0.0475 112.47); /* E9EDC9 yerine */
+  --color-b2: oklch(85.6% 0.0532 118.09); /* CCD5AE yerine */
+  --color-b3: oklch(98.14% 0.0342 99.83); /* FEFAE0 yerine */
+  --color-b4: oklch(94.82% 0.0441 88.53); /* FAEDCD yerine */
+  --color-b5: oklch(37.53% 0.0438 226.2); /* 264653 yerine */
+  --color-b6: oklch(63.04% 0.1013 183.03); /* 2a9d8f yerine */
+  --color-dark: oklch(20.2% 0.0079 285.67); /* 16161a yerine */
+  --color-purple: oklch(52.92% 0.2326 282.81); /* 6246ea yerine */
+  --color-soft: oklch(99.97% 0.0013 106.42); /* fffffe yerine */
+  --color-default: oklch(70.43% 0.029 255.14); /* 94a1b2 yerine */
+  --color-green: oklch(69.07% 0.1428 160.38); /* 2cb67d yerine */
+
+  /* Custom container settings */
+  --container-padding-xs: 2rem; /* mx-8 */
+  --container-padding-sm: 2.5rem; /* mx-10 */
+  --container-padding-md: 8rem; /* mx-32 */
+  --container-padding-lg: 14rem; /* mx-56 */
+  --container-padding-xl: 20vw; /* mx-[20vw] */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(14.48% 0 0);
+    --foreground: oklch(94.61% 0 0);
+  }
+}
+
+/* Animation keyframes for framer-motion equivalent */
+@keyframes enterAnimation {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exitAnimation {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.animate-enter {
+  animation: enterAnimation 0.7s ease forwards;
+}
+
+.animate-exit {
+  animation: exitAnimation 0.7s ease forwards;
+}
+
+/* Default container styles */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-xs);
+  padding-right: var(--container-padding-xs);
+}
+
+@media (min-width: 375px) {
+  .container {
+    padding-left: var(--container-padding-xs);
+    padding-right: var(--container-padding-xs);
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    padding-left: var(--container-padding-sm);
+    padding-right: var(--container-padding-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--container-padding-md);
+    padding-right: var(--container-padding-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--container-padding-lg);
+    padding-right: var(--container-padding-lg);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-left: var(--container-padding-xl);
+    padding-right: var(--container-padding-xl);
+  }
+}
