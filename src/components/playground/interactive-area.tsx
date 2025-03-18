@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Config } from "@/app/annotate-playground/page";
 import ConfigInputs from "@/components/playground/inputs";
 import AnnotatePreview from "@/components/playground/preview";
 
