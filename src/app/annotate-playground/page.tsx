@@ -35,9 +35,24 @@ export default function AnnotatePlayground() {
 
         <p className="text-lg max-w-2xl">
           Experiment with different settings for the{" "}
-          <code className="bg-dark-800 px-2 py-1 rounded">Annotate</code>{" "}
+          <span className="italic">Annotate</span>{" "}
           component. Adjust the controls below to see how different
           configurations affect the annotation.
+        </p>
+
+        <p className="text-lg max-w-2xl">
+          This component is built on top of{" "}
+          <a 
+            href="https://roughnotation.com?ref=barisemren.dev" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-purple hover:underline"
+          >
+            Rough Notation
+          </a>
+          , a JavaScript library for creating hand-drawn-style annotations. 
+          The component extends the original library with additional configuration options 
+          for better control over animations and display behavior.
         </p>
 
         <InteractiveArea />
