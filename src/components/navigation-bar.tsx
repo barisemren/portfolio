@@ -9,8 +9,8 @@ import VerticalNavigationBar from "./vertical-navigation";
 export default function NavigationBar() {
   const pathname = usePathname();
   const router = useRouter();
-  let [activeTab, setActiveTab] = useState(pathname);
-  let tabs = [
+  const [activeTab, setActiveTab] = useState(pathname);
+  const tabs = [
     { id: "/", label: "Home" },
     { id: "/about", label: "About" },
     { id: "/contact", label: "Contact" },

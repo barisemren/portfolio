@@ -2,7 +2,7 @@ import { CircleUser, House, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function VerticalNavigationBar() {
-  let tabs = [
+  const tabs = [
     { id: "/", icon: "Home" },
     { id: "/about", icon: "About" },
     { id: "/contact", icon: "Contact" },
