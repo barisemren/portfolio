@@ -14,6 +14,14 @@ type RoughAnnotationType =
 
 type BracketType = "left" | "right" | "top" | "bottom";
 
+// Interface for the annotation object returned by rough-notation
+interface RoughNotation {
+  show: () => void;
+  hide: () => void;
+  remove: () => void;
+  color: string | undefined;
+}
+
 interface AnnotateProps {
   children: ReactNode;
   type?: RoughAnnotationType;
@@ -48,7 +56,7 @@ export default function Annotate({
   showOnHover = false,
 }: AnnotateProps) {
   const elementRef = useRef<HTMLSpanElement>(null);
-  const annotationRef = useRef<any>(null);
+  const annotationRef = useRef<RoughNotation | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   
   // Determine if we should respond to hover events
@@ -69,7 +77,7 @@ export default function Annotate({
       brackets,
       multiline,
       strokeWidth,
-    });
+    }) as RoughNotation;
 
     // Initial show based on props
     if (showOnLoad && !showOnHover) {
@@ -91,7 +99,9 @@ export default function Annotate({
 
     // Update color without recreating the annotation
     const currentColor = isHovered && hoverColor ? hoverColor : color;
-    annotationRef.current.color = currentColor;
+    if (annotationRef.current) {
+      annotationRef.current.color = currentColor;
+    }
   }, [color, hoverColor, isHovered, shouldHandleHover]);
 
   // Handle hover state showing/hiding
